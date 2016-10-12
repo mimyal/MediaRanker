@@ -64,6 +64,6 @@ author_last = last_names.shuffle
 authors = author_first.map { |first| "#{first} #{author_last.pop}"}
 
 book_titles.length.times do |i|
-  book_hash = { type: "Album", name: book_titles.pop, creator: authors.pop, description: book_descriptions.pop, ranking: rand(0..100) }
-  Album.create(book_hash)
+  book_hash = { type: "Book", name: book_titles.pop, creator: authors.pop, description: book_descriptions.pop, ranking: rand(0..100) }
+  Book.create(book_hash)
 end
