@@ -28,7 +28,7 @@ invalid_listing_type:
   type: MediaListing
 
 blank_listing_name:
-  name:
+  # name:
   creator: Some Name
   description: A long bit of text
   ranking: 1
@@ -39,12 +39,4 @@ blank_listing_type:
   creator: Some Name
   description: A long bit of text
   ranking: 1
-  type:
-
-
-two:
-  name: MyString
-  creator: MyString
-  description: MyString
-  ranking: 1
-  type:
+  # type:
