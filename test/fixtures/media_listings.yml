@@ -1,15 +1,50 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  creator: MyString
-  description: MyString
+valid_movie:
+  name: valid_movie
+  creator: Some Name
+  description: A long bit of text
   ranking: 1
-  type: 
+  type: Movie
+
+valid_book:
+  name: valid_book
+  creator: Some Name
+  description: A long bit of text
+  ranking: 1
+  type: Book
+
+valid_album:
+  name: valid_album
+  creator: Some Name
+  description: A long bit of text
+  ranking: 1
+  type: Album
+
+invalid_listing_type:
+  name: invalid_listing
+  creator: Some Name
+  description: A long bit of text
+  ranking: 1
+  type: MediaListing
+
+blank_listing_name:
+  name:
+  creator: Some Name
+  description: A long bit of text
+  ranking: 1
+  type: Movie
+
+blank_listing_type:
+  name: invalid_listing
+  creator: Some Name
+  description: A long bit of text
+  ranking: 1
+  type:
+
 
 two:
   name: MyString
   creator: MyString
   description: MyString
   ranking: 1
-  type: 
+  type:
