@@ -10,8 +10,6 @@
 # MOVIES
 
 # From Frankenstein ipsum #15 titles
-names = ["It Was Calm", "Cold Gale", "Mind To Descend", "Greater Degree", "Breathless Eagerness", "Bend My Brother", "Agatha Fainted", "I Wept, Without Bounds", "I Feel His Death", "You On His Shadow", "He Was Firmly", "Many Other Plans", "The Most Imminent Peril", "Tranquil Conversation", "Highest Distinction"]
-
 descriptions = [
   "Hateful day enjoy reality in private were in earlier years.",
   "During this operation, and doomed him live and must have no exercise to return to overcome by what comment can to my heart palpitated in bud.",
@@ -30,18 +28,42 @@ descriptions = [
   "He talked of his companions, continually on it, and we heard during the loathing and by the fire; then you will only hopes of men should you were deemed impassable, and they arrived at Chene, a thing seemed to it is well that cannot see a mystery.",
   "He was my conclusions. I walked for vivacity."
 ]
+
+movie_titles = ["It Was Calm", "Cold Gale", "Mind To Descend", "Greater Degree", "Breathless Eagerness", "Bend My Brother", "Agatha Fainted", "I Wept, Without Bounds", "I Feel His Death", "You On His Shadow", "He Was Firmly", "Many Other Plans", "The Most Imminent Peril", "Tranquil Conversation", "Highest Distinction"].shuffle
+
 first_names = %w(Mary Ada Emma Lizzie Anne Sam Laura Simone Linnea Tove Astrid Karim Salma Silvia Jack)
 last_names = %w(Shelley Lovelace Revan Austen Austin Astine Jansson Monet Lindgren Antilope Rodhe Bernadotte Winters Cervantes Osten)
 
-movies = names.shuffle
 movie_descriptions = descriptions.shuffle
 directors_first = first_names.shuffle
 directors_last = last_names.shuffle
 directors = directors_first.map { |first| "#{first} #{directors_last.pop}"}
 
-movies_listings = Movie.all
-
-movies.length.times do |i|
-  movie_hash = { type: "Movie", name: movies.pop, creator: directors.pop, description: movie_descriptions.pop, ranking: rand(0..100) }
+movie_titles.length.times do |i|
+  movie_hash = { type: "Movie", name: movie_titles.pop, creator: directors.pop, description: movie_descriptions.pop, ranking: rand(0..100) }
   Movie.create(movie_hash)
+end
+
+# 15 Shakepeare ipsumed album titles
+album_titles = [ "I am not--then, dear love--", "Some misadventure.", "So 'tis time", "Then, dreadful trumpet", "Sound is grown to bed", "Sell him worthy whose loves", "Are dearer lord?", "Sorrow To Do Deliver", "Quickly as from her cheek", "It should not", "Golden Window Breaks", "They Kiss Consume", "Till that, I say - ay?", "No, sir, I have in mine act.", "You shall never lie", "East Begin", "O Courteous"]
+album_descriptions = descriptions.shuffle
+artist_first = first_names.shuffle
+artist_last = last_names.shuffle
+artists = artist_first.map { |first| "#{first} #{artist_last.pop}"}
+
+album_titles.length.times do |i|
+  album_hash = { type: "Album", name: album_titles.pop, creator: artists.pop, description: album_descriptions.pop, ranking: rand(0..100) }
+  Album.create(album_hash)
+end
+
+book_titles = [ "These are gone", "I would never", "Most encouraging Miss Bennet", "Unwilling to the last", "Your pardon", "I will be", "Pride will not hear", "By the danger", "Her poor mother's alarm", "Nothing allowed", "No such a short silence", "Worthless hussy, and graceful", "Think it were to ask", "Necessary terms", "Charming, except"]
+
+book_descriptions = descriptions.shuffle
+author_first = first_names.shuffle
+author_last = last_names.shuffle
+authors = author_first.map { |first| "#{first} #{author_last.pop}"}
+
+book_titles.length.times do |i|
+  book_hash = { type: "Album", name: book_titles.pop, creator: authors.pop, description: book_descriptions.pop, ranking: rand(0..100) }
+  Album.create(book_hash)
 end
