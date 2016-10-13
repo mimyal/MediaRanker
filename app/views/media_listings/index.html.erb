@@ -1,4 +1,42 @@
-<%= @media_listings.first.name %>
+<%= @media_listings.first.type %>
+
+<main>
+  <section>
+    <h2>Intro</h2>
+  </section>
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Ranking</th>
+          <th scope="col">Name</th>
+          <th scope="col">Upvote</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%  %>
+        <% @media_listings.each do |listing| %>
+        <tr>
+          <th scope="row">
+            <%= "Ranked: #{listing.ranking}" %>
+          </th>
+          <td>
+            <!-- @TODO create link to show view here -->
+            <%= listing.name %>
+          </td>
+          <td>
+            <!-- Button to upvote  -->
+            Upvote button
+          </td>
+
+        </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+  </section>
+</main>
 
 
 <p>This is the /index.html.erb page for each all media listings</p>

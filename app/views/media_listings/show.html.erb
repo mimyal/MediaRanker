@@ -1,2 +1,37 @@
-<%= @media_listing.name %>
+<h2><%= @media_listing.name %></h2>
+<h3>
+  <div class="show_view">
+  <% if @media_listing.type == "Movie" %>
+    Directed by:
+  <% elsif @media_listing.type == "Book" %>
+    Written by:
+  <% elsif @media_listing.type == "Album" %>
+    Performed by:
+  <% else %>
+  Error (unknown media listing type)
+  <% end %>
+  <%= @media_listing.creator %>
+</h3>
+<p>
+  Ranked: <%= @media_listing.ranking %>
+</p>
+</div>
+<!-- @TODO I have weird things happening. -->
+<!-- @TODO it looses params somehow, maybe if I add them all -->
+<!-- @TODO but that's probably not it, there is something else going on why does CREATE happen? -->
+<!-- @TODO also suddenly what's up with edit? etc (no params) -->
+<div class="show_buttons">
+  <p>
+    <%= form_for @media_listing, method: "patch" do |f| %>
+    <%= hidden_field_tag :ranking, @media_listing.ranking+=1 -%>
+    <%= f.submit "Upvote" %>
+    <% end %>
+  </p>
+<h3>Experiments with buttons</h3>
+<p>
+  <%= render partial: "buttons" %>
+</p>
+
+</div>
+
 <p>This is the views/media_listings/show.html.erb page</p>

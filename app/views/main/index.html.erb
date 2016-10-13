@@ -1,2 +1,18 @@
 <h2>List of all media in three columns</h2>
+
+<div class="Movies">
+<h3>Top Ten Movies</h3>
+  <span>List top ten - write method in ML model: <%= @movies %></span>
+  <%= link_to "Here are all the Movies", movies_path %>
+</div>
+<div class="Books">
+<h3>Top Ten Books</h3>
+  <span>List top ten: <%= @books %></span>
+  <%= link_to "Here are all the Books", books_path %>
+</div>
+<div class="Albums">
+<h3>Top Ten Albums</h3>
+<span>List top ten: <%= @albums %></span>
+<%= link_to "Here are all the Albums", albums_path %>
+</div>
 <p>This is the /main/index.html.erb page</p>

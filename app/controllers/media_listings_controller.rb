@@ -15,6 +15,7 @@ class MediaListingsController < ApplicationController
 
   def destroy
     MediaListing.find(params[:id]).destroy
+    raise
     # redirect_to #where do I want to redirect?
   end
 
@@ -34,13 +35,15 @@ class MediaListingsController < ApplicationController
 
   def edit
     @media_listing = MediaListing.find(params[:id])
+    raise
   end
 
   def update
     @media_listing = MediaListing.find(params[:id])
+    raise # Error for some reason :media listing is empty here
     if @media_listing.update(media_listing_params)
       # SUCCESS
-      # redirect_to # WHERE?
+      # redirect_to # WHERE? method media_path (for movie_path if movie etc)
     else
       # NO UPDATE
       render :edit
@@ -51,7 +54,7 @@ class MediaListingsController < ApplicationController
   private
 
   def media_listing_params
-    params.require(:media_listing).permit(:type)
+    params.require(:media_listing).permit(:type, :ranking)
   end
 
 end

@@ -1,5 +1,8 @@
 class MainController < ApplicationController
-  # # This was not needed at all for some reason?
-  # def index
-  # end
+
+  def index
+    @movies = Movie.all
+    @books = Book.all
+    @albums = Album.all
+  end
 end
