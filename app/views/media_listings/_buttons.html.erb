@@ -1,0 +1,19 @@
+<!-- Top line should be pasted into view page -->
+
+<p>This is the buttons partial view from the show form</p>
+<h4>Form Buttons</h4>
+<%= form_for @media_listing do |f| %>
+<%= f.button "Edit", url: "/#{@media_listing.type.downcase}s/edit" %>
+<%= f.button "Delete", url: "/#{@media_listing.type.downcase}/#{@media_listing.id}", method: :delete, data: { confirm: "Are you sure that this listing must be deleted?" }, class: "delete-button"%>
+<%= f.button "View all #{@media_listing.type}s", url: "/#{@media_listing.type.downcase}s"%>
+<%= f.button "View all media", url: root_path%>
+<% end %>
+
+<h4>Link Buttons</h4>
+<p>
+  <%= button_to "Edit", "/#{@media_listing.type.downcase}s/#{@media_listing.id}/edit", method: :get %>
+  <%= button_to "Delete", "/#{@media_listing.type.downcase}/#{@media_listing.id}", method: :delete, data: { confirm: "Are you sure that this listing must be deleted?" }, class: "delete-button"%>
+  <%= button_to "View all #{@media_listing.type.downcase}s", "/#{@media_listing.type.downcase}s"%>
+  <%= button_to "View all media", root_path, method: :get %>
+
+</p>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'main#index'
   resources :movies, controller: 'media_listings', type: "Movie"
   resources :books, controller: 'media_listings', type: "Book"
-  # resources :albums, controller: 'media_listings', type "Album"
+  resources :albums, controller: 'media_listings', type: "Album"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
