@@ -13,10 +13,10 @@ class MediaListingsController < ApplicationController
     @media_listing.type = params[:type] # in FarMar we only did this stuff in create-method
   end
 
+  # The actual destroy works
   def destroy
     MediaListing.find(params[:id]).destroy
-    raise
-    # redirect_to #where do I want to redirect?
+    # redirect_to
   end
 
   def create

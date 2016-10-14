@@ -15,7 +15,7 @@
       </thead>
 
       <tbody>
-        <%  %>
+        <% # @todo rank all the media_listings for ranking before listing them %>
         <% @media_listings.each do |listing| %>
         <tr>
           <td scope="row">
@@ -23,7 +23,7 @@
           </td>
           <td>
             <!-- @TODO create link to show view here -->
-            <%= listing.name %>
+            <%= link_to "#{listing.name}", media_listing_route(listing) %>
           </td>
           <td>
             <%= render partial: "upvote", locals: { media_listing: listing } %>
