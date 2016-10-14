@@ -1,37 +1,20 @@
 <h2><%= @listing.name %></h2>
 <h3>
   <div class="show_view">
-  <% if @listing.type == "Movie" %>
-    Directed by:
-  <% elsif @listing.type == "Book" %>
-    Written by:
-  <% elsif @listing.type == "Album" %>
-    Performed by:
-  <% else %>
-  Error (unknown media listing type)
-  <% end %>
-  <%= @listing.creator %>
+  <%= "#{created_per_type(@listing)} by: #{@listing.creator}" %>
 </h3>
 <p>
   Ranked: <%= @listing.ranking %>
 </p>
 </div>
-<!-- @TODO I have weird things happening. -->
-<!-- @TODO it looses params somehow, maybe if I add them all -->
-<!-- @TODO but that's probably not it, there is something else going on why does CREATE happen? -->
-<!-- @TODO also suddenly what's up with edit? etc (no params) -->
-<div class="show_buttons">
-  <p>
-    <%= @listing.id %>
-  </p>
+<div class="all_buttons">
   <p>
     <%= render partial: "upvote", locals: { media_listing: @listing } %>
   </p>
-<h3>Experiments with buttons</h3>
-<p>
-  <%= render partial: "buttons", locals: { media_listing: @listing, media_type: @listing.type.downcase, id: @listing.id } %>
-</p>
-
+  <h3>Experiments with buttons</h3>
+  <p>
+    <%= render partial: "buttons", locals: { media_listing: @listing, media_type: @listing.type.downcase, id: @listing.id } %>
+  </p>
 </div>
 
 <p>This is the views/media_listings/show.html.erb page</p>
