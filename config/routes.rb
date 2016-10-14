@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :books, controller: 'media_listings', type: "Book"
   resources :albums, controller: 'media_listings', type: "Album"
 
+  patch '/media_listings/upvote' => 'media_listings#upvote', as: 'upvote_listing'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

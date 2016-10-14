@@ -1,19 +1,19 @@
-<h2><%= @media_listing.name %></h2>
+<h2><%= @listing.name %></h2>
 <h3>
   <div class="show_view">
-  <% if @media_listing.type == "Movie" %>
+  <% if @listing.type == "Movie" %>
     Directed by:
-  <% elsif @media_listing.type == "Book" %>
+  <% elsif @listing.type == "Book" %>
     Written by:
-  <% elsif @media_listing.type == "Album" %>
+  <% elsif @listing.type == "Album" %>
     Performed by:
   <% else %>
   Error (unknown media listing type)
   <% end %>
-  <%= @media_listing.creator %>
+  <%= @listing.creator %>
 </h3>
 <p>
-  Ranked: <%= @media_listing.ranking %>
+  Ranked: <%= @listing.ranking %>
 </p>
 </div>
 <!-- @TODO I have weird things happening. -->
@@ -22,14 +22,14 @@
 <!-- @TODO also suddenly what's up with edit? etc (no params) -->
 <div class="show_buttons">
   <p>
-    <%= form_for @media_listing, method: "patch" do |f| %>
-    <%= hidden_field_tag :ranking, @media_listing.ranking+=1 -%>
-    <%= f.submit "Upvote" %>
-    <% end %>
+    <%= @listing.id %>
+  </p>
+  <p>
+    <%= render partial: "upvote", locals: { media_listing: @listing } %>
   </p>
 <h3>Experiments with buttons</h3>
 <p>
-  <%= render partial: "buttons" %>
+  <%= render partial: "buttons", locals: { media_listing: @listing, media_type: @listing.type.downcase, id: @listing.id } %>
 </p>
 
 </div>

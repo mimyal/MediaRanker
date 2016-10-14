@@ -18,16 +18,15 @@
         <%  %>
         <% @media_listings.each do |listing| %>
         <tr>
-          <th scope="row">
+          <td scope="row">
             <%= "Ranked: #{listing.ranking}" %>
-          </th>
+          </td>
           <td>
             <!-- @TODO create link to show view here -->
             <%= listing.name %>
           </td>
           <td>
-            <!-- Button to upvote  -->
-            Upvote button
+            <%= render partial: "upvote", locals: { media_listing: listing } %>
           </td>
 
         </tr>
