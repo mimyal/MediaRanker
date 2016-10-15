@@ -10,13 +10,14 @@ class MediaListingsController < ApplicationController
 
   def new
     @media_listing = MediaListing.new
-    @media_listing.type = params[:type] # in FarMar we only did this stuff in create-method
+    # @media_listing.type = params[:type] # in FarMar we only did this stuff in create-method
   end
 
   # The actual destroy works
   def destroy
+    index
     MediaListing.find(params[:id]).destroy
-    # redirect_to
+    redirect_to media_listings_route(@media_listings)
   end
 
   def create
@@ -42,7 +43,7 @@ class MediaListingsController < ApplicationController
     @media_listing = MediaListing.find(params[:id])
     if @media_listing.update(media_listing_params)
       # SUCCESS
-      raise # The method must be in the wrong place or something
+      # raise # The method must be in the wrong place or something
       redirect_to media_listing_route(@media_listing)
       # redirect_to root_path
     else
