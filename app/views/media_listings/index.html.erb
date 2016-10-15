@@ -16,13 +16,12 @@
 
       <tbody>
         <% # @todo rank all the media_listings for ranking before listing them %>
-        <% @media_listings.each do |listing| %>
+        <% @media_listings.order(:ranking).reverse.each do |listing| %>
         <tr>
           <td scope="row">
             <%= "Ranked: #{listing.ranking}" %>
           </td>
           <td>
-            <!-- @TODO create link to show view here -->
             <%= link_to "#{listing.name}", media_listing_route(listing) %>
           </td>
           <td>

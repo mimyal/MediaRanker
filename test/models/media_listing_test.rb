@@ -23,7 +23,12 @@ class MediaListingTest < ActiveSupport::TestCase
     assert_not blank_listing_type.valid?
   end
 
-  test "" do
-    # listing =
-  end
+# # The .yml is set up to have three of each type of media
+# # Movies have rankings 10, 20, 30
+# # Books have rankings 50, 40, 30
+# # Albums have rankings 70, 20, 50
+#   test "should sort listings in ranking order, top-down" do
+#     ordered_movies = [:valid_movie, :valid_movie2, :valid_movie3]
+#     assert_equal media_listings.order_by_ranking, ordered_movies
+#   end
 end
