@@ -42,7 +42,9 @@ class MediaListingsController < ApplicationController
     @media_listing = MediaListing.find(params[:id])
     if @media_listing.update(media_listing_params)
       # SUCCESS
-      redirect_to root_path # WHERE? method media_path (for movie_path if movie etc)
+      raise # The method must be in the wrong place or something
+      redirect_to media_listing_route(@media_listing)
+      # redirect_to root_path
     else
       # NO UPDATE
       render :edit

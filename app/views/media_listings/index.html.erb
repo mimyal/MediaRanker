@@ -1,9 +1,4 @@
-<%= @media_listings.first.type %>
-
 <main>
-  <section>
-    <h2>Intro</h2>
-  </section>
   <section>
     <table>
       <thead>
@@ -13,7 +8,6 @@
           <th scope="col">Upvote</th>
         </tr>
       </thead>
-
       <tbody>
         <% # @todo rank all the media_listings for ranking before listing them %>
         <% @media_listings.order(:ranking).reverse.each do |listing| %>
@@ -27,12 +21,15 @@
           <td>
             <%= render partial: "upvote", locals: { media_listing: listing } %>
           </td>
-
         </tr>
         <% end %>
       </tbody>
-
     </table>
+  </section>
+  <section>
+    <p>Buttons here are View all media and Add new listing</p>
+    <span class='buttons'><%= button_to "View all media", root_path, method: :get %></span>
+    <span class='buttons'><%= button_to add_media_text(@media_listings), new_route(@media_listings), method: :get %></span>
   </section>
 </main>
 

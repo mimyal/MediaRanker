@@ -1,12 +1,12 @@
-<h2>List of all media in three columns</h2>
-
-<div class="Movies">
-  <%= render partial: "top_ten", locals: { media: @movies } %>
-</div>
-<div class="Books">
-  <%= render partial: "top_ten", locals: { media: @books } %>
-</div>
-<div class="Albums">
-  <%= render partial: "top_ten", locals: { media: @albums } %>
+<div class="row">
+  <div class="small-4 column">
+    <%= render partial: "top_ten", locals: { media: @movies } %>
+  </div>
+  <div class="small-4 column">
+    <%= render partial: "top_ten", locals: { media: @books } %>
+  </div>
+  <div class="small-4 column end">
+    <%= render partial: "top_ten", locals: { media: @albums } %>
+  </div>
 </div>
 <p>This is the /main/index.html.erb page</p>
