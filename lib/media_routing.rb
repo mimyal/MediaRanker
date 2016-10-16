@@ -1,10 +1,10 @@
 def edit_route(listing)
   if listing.type == "Movie"
-    return edit_movie_path(listing.id)
+    return movie_path(listing.id)
   elsif listing.type == "Book"
-    return edit_book_path(listing.id)
+    return book_path(listing.id)
   elsif listing.type == "Album"
-    return edit_album_path(listing.id)
+    return album_path(listing.id)
   else
     return "Unknown media"
   end

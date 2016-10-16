@@ -41,8 +41,8 @@ class MediaListingsController < ApplicationController
 
   def update
     @media_listing = MediaListing.find(params[:id])
-    @media_listing.ranking = params[:ranking]
-    if @media_listing.update(upvote_param)
+    @media_listing.ranking == nil ? params[:ranking] : @media_listing.ranking
+    if @media_listing.update(media_listing_params)
       # SUCCESS
       redirect_to media_listing_route(@media_listing)
     else
@@ -56,10 +56,16 @@ class MediaListingsController < ApplicationController
   private
 
   def media_listing_params
-    return params.require(:media_listing).permit(:type, :ranking, :name, :creator, :description)
-  end
-
-  def upvote_param
-    return params.permit(:ranking)
+    if params[:movie] != nil
+      return params.require(:movie).permit(:type, :ranking, :name, :creator, :description)
+    elsif params[:book] != nil
+      return params.require(:book).permit(:type, :ranking, :name, :creator, :description)
+    elsif params[:album] != nil
+      return params.require(:album).permit(:type, :ranking, :name, :creator, :description)
+    elsif params[:media_listing] != nil
+      return params.require(:media_listing).permit(:type, :ranking, :name, :creator, :description)
+    else
+      return params.permit(:ranking)
+    end
   end
 end
