@@ -6,20 +6,19 @@ def edit_route(listing)
   elsif listing.type == "Album"
     return edit_album_path(listing.id)
   else
-    return Error("Unknown media")
+    return "Unknown media"
   end
 end
 
-# This is not the neatest way to do this. But it works until @media_listings is empty
-def new_route(listings)
-  if listings.first.type == "Movie"
+def new_route
+  if @media_listings.first.type == "Movie"
     return new_movie_path
-  elsif listings.first.type == "Book"
+  elsif @media_listings.first.type == "Book"
     return new_book_path
-  elsif listings.first.type == "Album"
+  elsif @media_listings.first.type == "Album"
     return new_album_path
   else
-    return Error("Unknown media")
+    return "Unknown media"
   end
 end
 
@@ -31,7 +30,7 @@ def media_listing_route(listing)
   elsif listing.type == "Album"
     return album_path(listing.id)
   else
-    return Error("Unknown media")
+    return "Unknown media"
   end
 end
 
@@ -43,6 +42,18 @@ def media_listings_route(listings)
   elsif listings.first.type == "Album"
     return albums_path
   else
-    return Error("Unknown media")
+    return "Unknown media"
+  end
+end
+
+def create_media_route
+  if params[:type] == "Movie"
+    return create_movie_path
+  elsif params[:type] == "Book"
+    return create_book_path
+  elsif params[:type] == "Album"
+    return create_album_path
+  else
+    return "Unknown media"
   end
 end

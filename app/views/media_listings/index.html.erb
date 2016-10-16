@@ -29,7 +29,7 @@
   <section>
     <p>Buttons here are View all media and Add new listing</p>
     <span class='buttons'><%= button_to "View all media", root_path, method: :get %></span>
-    <span class='buttons'><%= button_to add_media_text(@media_listings), new_route(@media_listings), method: :get %></span>
+    <span class='buttons'><%= button_to add_media_text(@media_listings), new_route, method: :get %></span>
   </section>
 </main>
 

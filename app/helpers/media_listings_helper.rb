@@ -12,6 +12,18 @@ module MediaListingsHelper
     end
   end
 
+  def creator_per_type(listing)
+    if listing.type == "Movie"
+      return "Director"
+    elsif listing.type == "Book"
+      return "Author"
+    elsif listing.type == "Album"
+      return "Artist"
+    else
+      return "(Unknown media type) Created"
+    end
+  end
+
   def add_media_text(listings)
     if listings.first.type == "Movie"
       return "Add a Movie"

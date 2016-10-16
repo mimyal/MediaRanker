@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
   root 'main#index'
-  resources :movies, controller: 'media_listings', type: "Movie"
-  resources :books, controller: 'media_listings', type: "Book"
-  resources :albums, controller: 'media_listings', type: "Album"
+  resources :movies, controller: 'media_listings', type: "Movie", except:  [:create]
+  resources :books, controller: 'media_listings', type: "Book", except:  [:create]
+  resources :albums, controller: 'media_listings', type: "Album", except:  [:create]
+
+  post '/movies', controller: 'media_listings', action: 'create', type: "Movie", as: 'create_movie'
+  post '/books', controller: 'media_listings', action: 'create', type: "Book", as: 'create_book'
+  post '/albums', controller: 'media_listings', action: 'create', type: "Album", as: 'create_album'
 
   # patch '/media_listings/upvote' => 'media_listings#upvote', as: 'upvote_listing' #suggested by Chris
 
