@@ -10,7 +10,6 @@ class MediaListingsController < ApplicationController
 
   def new
     @media_listing = MediaListing.new
-    @media_listing.type = params[:type] # rather enter here than later?
   end
 
   # The actual destroy works

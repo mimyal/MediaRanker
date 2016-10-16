@@ -8,8 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<header>
+  <%= image_tag("owl.jpg",  alt: "Wise Bird") -%>
+  <%= link_to "Media Ranker", root_path %></span>
+</header>
+  <%= yield %>
 
 </body>
 </html>
