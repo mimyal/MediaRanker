@@ -46,13 +46,17 @@ def media_listings_route(listings)
   end
 end
 
+# Used by MediaListingsController create method
 def create_media_route
   if params[:type] == "Movie"
-    return create_movie_path
+    return movies_path
+    # return create_movie_path
   elsif params[:type] == "Book"
-    return create_book_path
+    return books_path
+    # return create_book_path
   elsif params[:type] == "Album"
-    return create_album_path
+    return albums_path
+    # return create_album_path
   else
     return "Unknown media"
   end

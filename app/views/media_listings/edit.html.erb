@@ -1,1 +1,2 @@
 <p>This is the views/media_listings/edit.html.erb page</p>
+<%= render partial: "form", locals: { form_route: edit_route(@media_listing), http_method: 'patch' } %>

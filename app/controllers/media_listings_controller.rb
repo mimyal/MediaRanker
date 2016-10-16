@@ -21,32 +21,33 @@ class MediaListingsController < ApplicationController
   end
 
   def create
-    @media_listing = MediaListing.new(media_listing_params)
-    raise
+    creation_parameters = media_listing_params
+    @media_listing = MediaListing.new(creation_parameters)
+    @media_listing.ranking = 0
+    @media_listing.type = params[:type]
     if @media_listing.save
       # SUCCESS
-      # redirect_to # WHERE?
+      redirect_to create_media_route
     else
-      # DID NOT SAVED
+      # DID NOT SAVE
+      # Not sure these work as intended
       render :new
     end
   end
 
   def edit
     @media_listing = MediaListing.find(params[:id])
-    # raise
   end
 
   def update
     @media_listing = MediaListing.find(params[:id])
-    raise
-    if @media_listing.update(update_params)
+    @media_listing.ranking = params[:ranking]
+    if @media_listing.update(upvote_param)
       # SUCCESS
-      # raise # The method must be in the wrong place or something
       redirect_to media_listing_route(@media_listing)
-      # redirect_to root_path
     else
       # NO UPDATE
+      # Not sure these work as intended
       render :edit
     end
   end
@@ -55,11 +56,10 @@ class MediaListingsController < ApplicationController
   private
 
   def media_listing_params
-    puts ">>> NNN <<< #{params.require(:media_listing).permit(:type, :ranking, :name, :creator, :description)}"
-    puts ">>> XXX <<< #{params.permit(:type, :ranking).require(:media_listing).permit(:type, :ranking, :name, :creator, :description)}"
-    puts "<<< VVVV <<< #{params.permit(:ranking, :type, :name, :creator, :description)}"
     return params.require(:media_listing).permit(:type, :ranking, :name, :creator, :description)
-    # return params.permit(:ranking, :type, :name, :creator, :description)
-    # params.permit(:type, :ranking, :name, :creator, :description)
+  end
+
+  def upvote_param
+    return params.permit(:ranking)
   end
 end
