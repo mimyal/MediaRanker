@@ -4,7 +4,7 @@
     <% 10.times do %>
       <% listing = ordered_media.shift %>
       <p>
-      <span class="media-name"><%= link_to "#{listing.name}", media_listing_route(listing) %></span>
+      <span><%= link_to "#{listing.name}", media_listing_route(listing) %></span>
       <span><%= "Ranked: #{listing.ranking}" %></span>
       </p>
     <% end %>

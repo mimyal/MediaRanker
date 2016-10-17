@@ -26,8 +26,8 @@
     </table>
   </section>
   <section>
-    <span class='buttons'><%= button_to "View all media", root_path, method: :get %></span>
-    <span class='buttons'><%= button_to add_media_text(@media_listings), new_route, method: :get %></span>
+    <%= link_to "View all media", root_path, method: :get, class: :button %>
+    <%= link_to add_media_text(@media_listings), new_route, method: :get, class: :button %>
   </section>
 </main>
 

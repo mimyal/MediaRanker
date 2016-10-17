@@ -1,9 +1,9 @@
 
 <p>
-  <%= button_to "Edit", "/#{media_listing.type.downcase}s/#{media_listing.id}/edit", method: :get %>
-  <%= button_to "Delete", "/#{media_listing.type.downcase}s/#{media_listing.id}", method: :delete, data: { confirm: "Are you sure that this listing must be deleted?" }, class: "delete-button"%>
-  <%= button_to "View all #{media_listing.type.downcase}s", "/#{media_listing.type.downcase}s", method: :get %>
-  <%= button_to "View all media", root_path, method: :get %>
+  <%= link_to "Edit", edit_route(media_listing), method: :get, class: "hollow button" %>
+  <%= link_to "Delete", media_listing_route(media_listing), method: :delete, data: { confirm: "Are you sure that this listing must be deleted?" }, class: "alert button"%>
+  <%= link_to "View all #{media_listing.type.downcase}s", create_media_route, method: :get, class: 'hollow button' %>
+  <%= link_to "View all media", root_path, method: :get, class: "hollow button" %>
 </p>
 
 

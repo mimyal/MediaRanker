@@ -1,10 +1,22 @@
-def edit_route(listing)
+def update_route(listing)
   if listing.type == "Movie"
     return movie_path(listing.id)
   elsif listing.type == "Book"
     return book_path(listing.id)
   elsif listing.type == "Album"
     return album_path(listing.id)
+  else
+    return "Unknown media"
+  end
+end
+
+def edit_route(listing)
+  if listing.type == "Movie"
+    return edit_movie_path(listing.id)
+  elsif listing.type == "Book"
+    return edit_book_path(listing.id)
+  elsif listing.type == "Album"
+    return edit_album_path(listing.id)
   else
     return "Unknown media"
   end
@@ -47,6 +59,7 @@ def media_listings_route(listings)
 end
 
 # Used by MediaListingsController create method
+# Used by _buttons - rename
 def create_media_route
   if params[:type] == "Movie"
     return movies_path
