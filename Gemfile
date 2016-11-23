@@ -4,6 +4,14 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
 
+
+# # Two gems, to use Foundation:
+# # Foundation Rails Gem
+# gem 'foundation-rails'
+# # Required due to an incompatibility between TurboLinks and Foundation.
+# gem 'jquery-turbolinks'
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -31,6 +39,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# API GEMS
+gem 'httparty'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
@@ -49,6 +60,9 @@ group :development, :test do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'rails-pry'
+
+  gem 'minitest-vcr'
+  gem 'webmock'
 
 end
 

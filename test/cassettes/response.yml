@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://libris.kb.se/xsearch?format=json&q=some-unknown-isbn
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Nov 2016 21:11:49 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '76'
+    body:
+      encoding: UTF-8
+      string: "{\"xsearch\": {\r\n\"from\": null,\r\n\"to\": null,\r\n\"records\":
+        0,\r\n\"list\": [\r\n\r\n]\r\n}}"
+    http_version: 
+  recorded_at: Wed, 23 Nov 2016 21:11:49 GMT
+- request:
+    method: get
+    uri: http://libris.kb.se/xsearch?format=json&q=91-1-927571-4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Nov 2016 21:33:57 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '334'
+    body:
+      encoding: UTF-8
+      string: "{\"xsearch\": {\r\n\"from\": 1,\r\n\"to\": 1,\r\n\"records\": 1,\r\n\"list\":
+        [\r\n{\r\n\"identifier\": \"http://libris.kb.se/bib/7156259\",\r\n\"title\":
+        \"Sent i november\",\r\n\"creator\": \"Jansson, Tove, 1914-2001\",\r\n\"isbn\":
+        \"9119275714 ;\",\r\n\"type\": \"book\",\r\n\"publisher\": \"Stockholm : Norstedt\",\r\n\"date\":
+        \"1992\",\r\n\"language\": \"swe\",\r\n\"description\": \"li: S\"\r\n}\r\n]\r\n}}"
+    http_version: 
+  recorded_at: Wed, 23 Nov 2016 21:33:58 GMT
+recorded_with: VCR 3.0.3
