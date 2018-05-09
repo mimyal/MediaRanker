@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://libris.kb.se/xsearch?format=json&q=91-7448-738-8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Nov 2016 22:26:23 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '307'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ4c2VhcmNoIjogew0KImZyb20iOiAxLA0KInRvIjogMSwNCiJyZWNvcmRz
+        IjogMSwNCiJsaXN0IjogWw0Kew0KImlkZW50aWZpZXIiOiAiaHR0cDovL2xp
+        YnJpcy5rYi5zZS9iaWIvNzY0MjQwOSIsDQoidGl0bGUiOiAiRGp1cmJva2Vu
+        IDogZW4gYW50b2xvZ2kiLA0KImlzYm4iOiAiOTE3NDQ4NzM4OCIsDQoidHlw
+        ZSI6ICJib29rIiwNCiJwdWJsaXNoZXIiOiAiU3RvY2tob2xtIDogRW4gYm9r
+        IGbDtnIgYWxsYSIsDQoiZGF0ZSI6ICIxOTkzIiwNCiJsYW5ndWFnZSI6ICJz
+        d2UiLA0KImRlc2NyaXB0aW9uIjogIkxpOlMiDQp9DQpdDQp9fQ==
+    http_version: 
+  recorded_at: Wed, 23 Nov 2016 22:26:23 GMT
+recorded_with: VCR 3.0.3

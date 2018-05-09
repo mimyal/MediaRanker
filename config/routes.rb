@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post '/books', controller: 'media_listings', action: 'create', type: "Book", as: 'create_book'
   post '/albums', controller: 'media_listings', action: 'create', type: "Album", as: 'create_album'
 
+  get '/libris', controller: 'libris', action: 'index'
+
   # patch '/media_listings/upvote' => 'media_listings#upvote', as: 'upvote_listing' #suggested by Chris
 
   # The priority is based upon order of creation: first created -> highest priority.

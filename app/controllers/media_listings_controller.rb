@@ -35,6 +35,7 @@ class MediaListingsController < ApplicationController
   end
 
   def edit
+    raise
     @media_listing = MediaListing.find(params[:id])
   end
 

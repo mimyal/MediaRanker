@@ -23,6 +23,20 @@ class LibrisWrapperTest < ActiveSupport::TestCase
     end
   end
 
+  test "get_book should set creator values to nil if not available" do
+    VCR.use_cassette("book-response2") do
+      isbn = '91-7448-738-8'
+      actual_book = LibrisWrapper.get_book(isbn)
+      expected_book = Libro.new('http://libris.kb.se/bib/7642409', 'Djurboken : en antologi', nil, nil, '91-7448-738-8')
+
+      assert_equal actual_book.title, expected_book.title
+      assert_nil actual_book.creator_last_name
+
+      # This doesn't work because minitest is not good at comparing objects
+      # assert_equal(actual_book, expected_book)
+    end
+  end
+
   test "get_book should return nil for unexpected isbn requests" do
     VCR.use_cassette("response") do
       isbn = 'some-unknown-isbn'
